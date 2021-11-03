@@ -106,9 +106,10 @@ check.dependsOn jacocoTestCoverageVerification
 spotless {
 	java {
 		eclipse().configFile 'format.xml'
-		 licenseHeaderFile 'LICENSE'
+//		 licenseHeaderFile 'LICENSE'
 		target project.fileTree(project.rootDir) {
 			include '**/*.java'
+			exclude 'LICENSE'
 			exclude '**/build/**'
 		}
 		enforceCheck true

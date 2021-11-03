@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
-
 public class GreetingsServiceImplTest {
 
   @InjectMocks
@@ -29,9 +28,9 @@ public class GreetingsServiceImplTest {
     Assert.assertEquals(3, resultSum);
   }
 
-//   @Test
-//   public void multiply() {
-//   }
+  // @Test
+  // public void multiply() {
+  // }
 
   // @Test
   // public void divide() {
