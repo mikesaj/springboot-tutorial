@@ -7,7 +7,7 @@ plugins {
 	id 'com.diffplug.spotless' version '5.0.0'
 }
 
-group = 'com.sajmix'
+group = 'tech.orangeblue'
 version = '0.0.1-SNAPSHOT'
 // sourceCompatibility = '11'
 sourceCompatibility = 1.8
@@ -69,7 +69,7 @@ jacocoTestReport {
 		}
 		afterEvaluate {
 			classDirectories.setFrom(files(classDirectories.files.collect {
-				fileTree(dir: it, excludes: [ 'com/sajmix/imagethumbnailgenerator/model/**' ]) }))
+				fileTree(dir: it, excludes: [ 'tech/orangeblue/springboottutorial/model/**' ]) }))
 		}
 	}
 }
@@ -78,7 +78,7 @@ jacocoTestReport {
 jacocoTestCoverageVerification {
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, excludes: [ 'com/sajmix/imagethumbnailgenerator/model/**' ]) }))
+			fileTree(dir: it, excludes: [ 'tech/orangeblue/springboottutorial/model/**' ]) }))
 	}
 	violationRules {
 		rule {
