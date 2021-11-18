@@ -15,14 +15,16 @@ public class GreetingsControllerImpl implements GreetingsController {
   private static final org.slf4j.Logger LOGGER = LoggerFactory
       .getLogger(GreetingsControllerImpl.class);
 
-  @GetMapping(value = "/{message}", produces = "application/json")
-  public ResponseEntity<String> getGreetingImage(@PathVariable String message) {
+  @GetMapping(value = "/{name}", produces = "plain/text")
+  public ResponseEntity<String> getGreetingImage(@PathVariable String name) {
 
-    LOGGER.debug("GreetingsControllerImpl API call to with data is {}", message);
+    LOGGER.debug("GreetingsControllerImpl API call to with data is {}", name);
 
-    if (message == null || message.length() == 0) {
+    if (name == null || name.length() == 0) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Message cannot be null or empty");
     }
-    return ResponseEntity.status(HttpStatus.OK).body("Greetings");
+
+    String resMessage = "Greetings, " + name;
+    return ResponseEntity.status(HttpStatus.OK).body(resMessage);
   }
 }
